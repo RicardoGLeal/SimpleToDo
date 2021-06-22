@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button add_btn;
     EditText item_et;
     RecyclerView items_rv;
-
+    ItemsAdapter itemsAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,18 @@ public class MainActivity extends AppCompatActivity {
         items.add("Play with my friends");
         items.add("Take the Android Course");
 
-        ItemsAdapter itemsAdapter = new ItemsAdapter(items);
+        ItemsAdapter.OnLongClickListener onLongClickListener = new ItemsAdapter.OnLongClickListener() {
+
+            @Override
+            public void onItemLongClicked(int position) {
+                //Delete the item from the model
+                items.remove(position);
+                //Notify the adapter
+                itemsAdapter.notifyItemRemoved(position);
+                Toast.makeText(getApplicationContext(), "Item was removed", Toast.LENGTH_SHORT).show();
+            }
+        };
+        itemsAdapter = new ItemsAdapter(items, onLongClickListener);
         items_rv.setAdapter(itemsAdapter);
         items_rv.setLayoutManager(new LinearLayoutManager(this));
 
