@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 * Implement a method of authentication for the user. 
 
-* Add detailed information of the tasks (Like the date and time when they are expected to be completed) 
+* Add more detailed information on the tasks (Like the date and time when they are expected to be completed). 
 
 ## Video Walkthrough
 
