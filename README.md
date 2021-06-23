@@ -20,21 +20,23 @@ The following **bonus** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [X] List anything else that you can get done to improve the app functionality!
 
 -Improve the app design. 
--Save the information in a databse
+
+-Save the information in a database.
+
+-Implement a method of authentication for the user. 
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='screenshots/appdemo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
-[App Demo GIF](screenshots/appdemo.gif)
 ## Notes
 
 Describe any challenges encountered while building the app.
