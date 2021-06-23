@@ -22,11 +22,11 @@ The following **additional** features are implemented:
 
 * [X] List anything else that you can get done to improve the app functionality!
 
-*-Improve the app design. 
+* Improve the app design. 
 
-*-Save the information in a database.
+* Save the information in a database.
 
-*-Implement a method of authentication for the user. 
+* Implement a method of authentication for the user. 
 
 
 ## Video Walkthrough
@@ -41,8 +41,8 @@ GIF created with [Kap](https://getkap.co/).
 
 Describe any challenges encountered while building the app.
 
-*I could not arrange the elements graphically in the Relative Layout, but in the end I was able to accommodate them through code.
-*I didn't know if it would be better to use Git or GitHub or the git tool built into Android Studio. GitHub was the winner.
+* I could not arrange the elements graphically in the Relative Layout, but in the end I was able to accommodate them through code.
+* I didn't know if it would be better to use Git or GitHub or the git tool built into Android Studio. GitHub was the winner.
 
 
 ## License
