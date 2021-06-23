@@ -12,10 +12,12 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
 
+    //Interface implemented for the Edit Item function.
     public interface OnClickListener {
         void onItemClicked(int position);
     }
 
+    //Interface implemented for the Delete Item function.
     public interface OnLongClickListener {
         void onItemLongClicked(int position);
     }
@@ -24,6 +26,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     OnLongClickListener longClickListener;
     OnClickListener clickListener;
 
+    //Constructor of the ItemsAdapter: receives the list of items, the OnLongClickListener and the OnClickListener.
     public ItemsAdapter(List<String> _items, OnLongClickListener longClickListener, OnClickListener clickListener) {
         this.items = _items;
         this.longClickListener = longClickListener;
@@ -31,14 +34,12 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     }
 
     @NonNull
-    //@org.jetbrains.annotations.NotNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View todoView = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
         return new ViewHolder(todoView);
     }
-
 
     //responsible for binding data to a particular view holder
     @Override
@@ -47,7 +48,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         String item = items.get(position);
         //Bind the item into the specified view holder
         holder.bind(item);
-
     }
 
     @Override

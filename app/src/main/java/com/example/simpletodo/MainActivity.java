@@ -23,6 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //strings that are passed to the EditActivity in the intent.
     public static final String KEY_ITEM_TEXT = "item_text";
     public static final String KEY_ITEM_POSITION = "item_position";
     public static final int EDIT_TEXT_CODE = 20;
@@ -42,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
         items_rv = findViewById(R.id.items_rv);
 
         loadItems();
-
+        /*OnLongClickListener that is called from the ItemsAdapter when the user makes a long click
+        in a item.
+        This listener deletes the item from the model and notifies the adapter.*/
         ItemsAdapter.OnLongClickListener onLongClickListener = new ItemsAdapter.OnLongClickListener() {
 
             @Override
@@ -55,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 saveItems();
             }
         };
+
+        /*OnClickListener that is called from the ItemsAdapter when the user makes a click
+        in a item
+        This listener creates a new Intent to the EditActivity and passes the item string and it's
+        position*/
+
         ItemsAdapter.OnClickListener onClickListener = new ItemsAdapter.OnClickListener() {
             @Override
             public void onItemClicked(int position) {
@@ -69,17 +78,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
+
         itemsAdapter = new ItemsAdapter(items, onLongClickListener, onClickListener);
         items_rv.setAdapter(itemsAdapter);
         items_rv.setLayoutManager(new LinearLayoutManager(this));
 
+        /*Listener of the Add Button. It responds when the user clicks the button.
+        It's function is to add the item to the model and notify the adapter.*/
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String todoItem = item_et.getText().toString();
                 //Add item to the model
                 items.add(todoItem);
-                //Notify adaptar that an item is inserted.
+                //Notify adapter that an item is inserted.
                 itemsAdapter.notifyItemInserted(items.size()-1);
                 item_et.setText("");
                 Toast.makeText(getApplicationContext(), "Item was added", Toast.LENGTH_SHORT).show();
@@ -94,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == EDIT_TEXT_CODE){
             //Retrieve the updated text value
             String itemText = data.getStringExtra(KEY_ITEM_TEXT);
-            //extract the original position of the editem item from the position key
+            //extract the original position of the edited item from the position key
             int position = data.getExtras().getInt(KEY_ITEM_POSITION);
             //update the model at the right position with the new item text
             items.set(position, itemText);
