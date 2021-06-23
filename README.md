@@ -28,6 +28,7 @@ The following **additional** features are implemented:
 
 * Implement a method of authentication for the user. 
 
+* Add detailed information of the tasks (Like the date and time when they are expected to be completed) 
 
 ## Video Walkthrough
 
@@ -43,7 +44,7 @@ Describe any challenges encountered while building the app.
 
 * I could not arrange the elements graphically in the Relative Layout, but in the end I was able to accommodate them through code.
 * I didn't know if it would be better to use Git or GitHub or the git tool built into Android Studio. GitHub was the winner.
-
+* It was a challenge to get used to using android studio on mac.
 
 ## License
 
